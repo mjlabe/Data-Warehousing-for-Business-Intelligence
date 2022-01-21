@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  mysql_db_module4:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data_volume:/var/lib/mysql
