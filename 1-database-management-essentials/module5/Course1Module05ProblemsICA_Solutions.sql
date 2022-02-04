@@ -32,7 +32,7 @@ SELECT C.CustNo, CustName, SUM(EstCost) AS TotalEstCosts
 FROM EventRequest
     INNER JOIN Customer C on EventRequest.CustNo = C.CustNo
 WHERE Status = 'Approved'
-GROUP BY C.CustNo, CustName
+GROUP BY C.CustNo, CustName;
 
 # 4
 # ----------
@@ -57,4 +57,4 @@ SET SQL_SAFE_UPDATES = 1;
 # 6
 # ----------
 # Delete the new row added to the Customer table.
-DELETE FROM Customer WHERE CustNo = 'C107'
+DELETE FROM Customer WHERE CustNo = 'C107';
