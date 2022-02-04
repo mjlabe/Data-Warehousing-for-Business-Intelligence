@@ -37,6 +37,24 @@ GROUP BY C.CustNo, CustName
 # 4
 # ----------
 # Insert yourself as a new row in the Customer table.
+
 # SELECT CustNo FROM Customer ORDER BY CustNo DESC LIMIT 1;
 INSERT INTO Customer (CustNo, CustName, Address, Internal, Contact, Phone, City, State, Zip)
     VALUES ('C107', 'Marc', 'Home', 'N', 'Jen', '716', 'Buffalo', 'NY', '90210');
+
+# 5
+# ----------
+# Increase the rate by 10 percent of resource names equal to nurse. In MySQL, you need to place the UPDATE statement between two SET statements.
+# SET SQL_SAFE_UPDATES = 0;
+# UPDATE statement
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE ResourceTbl
+    SET Rate = Rate * 1.1
+    WHERE ResName = 'nurse';
+SET SQL_SAFE_UPDATES = 1;
+
+# 6
+# ----------
+# Delete the new row added to the Customer table.
+DELETE FROM Customer WHERE CustNo = 'C107'
